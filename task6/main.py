@@ -1,14 +1,11 @@
 import codecs
 import string
 import numpy as np
-
 myfile = codecs.open(r"text.txt", "r", encoding='utf-8')
 t = myfile.read()
-
 for s in (string.punctuation+"—«»"):
     if s in t:
         t = t.replace(s, '')
-
 t = t.lower()
 text = t.split()
 print("Введите первоначальные слова")
@@ -21,7 +18,6 @@ comp = True
 words = list()
 ln = len(prefix)
 dl = len(prefix)
-
 for p in range(n):
     for i in range(len(text)-ln):
         if prefix[ln-dl] == text[i]:
